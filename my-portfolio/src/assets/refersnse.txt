@@ -1,0 +1,7 @@
+git add
+git commit -m ""
+git push
+git pull
+
+
+npm run ng g @angular/core:standalone
