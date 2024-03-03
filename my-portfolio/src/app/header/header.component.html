@@ -1,0 +1,33 @@
+<mat-toolbar class="fixed-top fw-normal headerColor">
+    <h2>Portfolio</h2>
+    <div class="container-fluid justify-content-end" id="bigScreen">
+        <button mat-button class="float-end">Contact</button>
+        <button mat-button class="float-end me-2">Qualifications</button>
+        <button mat-button class="float-end me-2">Skills</button>
+        <button mat-button class="float-end me-2">About</button>
+        <button mat-button class="float-end me-2">Home</button>
+    </div>
+    
+    <div id="mobileScreen" class="ms-auto">
+        <button mat-icon-button aria-label="menu icon" data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasResponsive" aria-controls="offcanvasResponsive">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <div class="offcanvas-lg offcanvas-end headerColor" style="transition: 0.5s;" tabindex="-1" id="offcanvasResponsive"
+            aria-labelledby="offcanvasResponsiveLabel">
+            <div class="offcanvas-header">
+                <button type="button" mat-icon-button data-bs-dismiss="offcanvas"
+                    data-bs-target="#offcanvasResponsive" aria-label="Close">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </div>
+            <div class="offcanvas-body navbar-nav flex-grow-1 pe-3">
+                <button mat-button data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive">Home</button>
+                <button mat-button data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive">About</button>
+                <button mat-button data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive">Skills</button>
+                <button mat-button data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive">Qualifications</button>
+                <button mat-button data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive">Contact</button>
+            </div>
+        </div>
+    </div>
+</mat-toolbar>

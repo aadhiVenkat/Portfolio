@@ -1,0 +1,23 @@
+.card{
+    animation: topSlide 2s ease alternate;
+    animation-delay: .2s;
+    width: 50%;
+}
+
+
+@keyframes topSlide{
+    0%{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .card{
+        width: 100% !important;
+    }
+}
