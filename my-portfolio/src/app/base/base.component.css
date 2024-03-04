@@ -1,23 +1,36 @@
-.card{
+mat-card,p{
     animation: topSlide 2s ease alternate;
     animation-delay: .2s;
-    width: 50%;
+}
+
+img{
+    animation: leftSlide 2s ease alternate;
+    animation-delay: .2s;
+}
+
+h1{
+    animation: rightSlide 2s ease alternate;
+    animation-delay: .2s;
+    font-size: 35px;
+    color: lightsteelblue;
+}
+p{
+    font-size: 30px;
+}
+span{
+    color: gold;
 }
 
 
-@keyframes topSlide{
-    0%{
-        transform: translateY(100px);
-        opacity: 0;
-    }
-    100%{
-        transform: translateY(0px);
-        opacity: 1;
-    }
-}
 
 @media screen and (max-width: 600px) {
     .card{
         width: 100% !important;
     }
 }
+
+/* @media screen and (max-width: 765px) {
+    .rounded-start{
+        border-radius: 50% !important;
+    }
+} */
