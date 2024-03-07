@@ -3,13 +3,14 @@ import { AboutComponent } from './about/about.component';
 import {MatCardModule} from '@angular/material/card';
 import { HeaderComponent } from './header/header.component';
 import { BaseComponent } from './base/base.component';
+import { SkillsComponent } from './skills/skills.component';
 
 @Component({
   selector: 'app-root',
   standalone:true,
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  imports:[AboutComponent, MatCardModule, HeaderComponent, BaseComponent]
+  imports:[AboutComponent, MatCardModule, HeaderComponent, BaseComponent, SkillsComponent]
 })
 export class AppComponent {
   title = 'my-portfolio';

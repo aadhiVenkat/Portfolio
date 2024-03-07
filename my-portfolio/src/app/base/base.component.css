@@ -22,10 +22,24 @@ span{
 }
 
 
+.logo2 {
+    display: none !important;
+}
+
 
 @media screen and (max-width: 600px) {
     .card{
         width: 100% !important;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .logo2 {
+        display: block !important;
+    }
+
+    .logo1 {
+        display: none !important;
     }
 }
 
