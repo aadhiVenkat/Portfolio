@@ -1,0 +1,8 @@
+::ng-deep .skill .mdc-tab__text-label { 
+    font-weight: 700 !important;
+    color: lightsteelblue !important;
+}
+
+.rating:hover{
+    background-color: red;
+}
