@@ -1,105 +1,28 @@
 <mat-card class="mx-auto bg-dark shadow-lg p-3 mb-5 rounded text-white skill">
     <mat-card-header class="fs-1 fw-semibold text-decoration-underline">Skills</mat-card-header>
     <mat-card-content class="col-md-8 my-auto w-100">
-        <mat-tab-group>
-            <mat-tab label="Front-End">
-                <div class="container text-center">
-                    <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 mt-3">
-                        @for (skillimg of FrontEndList; track $index) {
-                        <div class="col gap-6 py-2">
-                            <div [ngClass]="skillimg.shadow" class="card shadow-md rounded-lg bg-gradient-to-b to-black from-gray-800">
-                                <div [id]="skillimg.id" class="card-body hover:scale-105 duration-700">
-                                    <img class="w-50 mx-auto" [src]="skillimg.imgSrc" [alt]="skillimg.alt">
-                                    <p class="text-white mt-2">{{skillimg.title}}</p>
-                                </div>
-                                <!-- <div class="flex mx-auto rating">
-                                    @for (rating of [].constructor(skillimg.rating); track rating) {
-                                    <mat-icon class="text-orange-500 text-sm" aria-hidden="false" aria-label="Example star icon"
-                                        fontIcon="star"></mat-icon>
-                                    }
-                                </div> -->
+        <div class="container text-center">
+            <div class="container text-center">
+                <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 mt-3">
+                    @for (skillimg of FrontEndList; track $index) {
+                    <div class="col gap-6 py-2">
+                        <div [ngClass]="skillimg.shadow" class="card shadow-md rounded-lg bg-gradient-to-b to-black from-gray-800">
+                            <div [id]="skillimg.id" class="card-body hover:scale-105 duration-700">
+                                <img class="w-50 mx-auto" [src]="skillimg.imgSrc" [alt]="skillimg.alt">
+                                <p class="text-white mt-2">{{skillimg.title}}</p>
                             </div>
+                            <!-- <div class="flex mx-auto rating">
+                                        @for (rating of [].constructor(skillimg.rating); track rating) {
+                                        <mat-icon class="text-orange-500 text-sm" aria-hidden="false" aria-label="Example star icon"
+                                            fontIcon="star"></mat-icon>
+                                        }
+                                    </div> -->
                         </div>
-                        }
                     </div>
+                    }
                 </div>
-            
-            </mat-tab>
-            <mat-tab label="Back-End">
-                <div class="container text-center">
-                    <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 mt-3">
-                        @for (skillimg of BackEndList; track $index) {
-                        <div class="col gap-6 py-2">
-                            <div [ngClass]="skillimg.shadow"
-                                class="card shadow-md rounded-lg bg-gradient-to-b to-black from-gray-800">
-                                <div [id]="skillimg.id" class="card-body hover:scale-105 duration-700">
-                                    <img class="w-50 mx-auto" [src]="skillimg.imgSrc" [alt]="skillimg.alt">
-                                    <p class="text-white mt-2">{{skillimg.title}}</p>
-                                </div>
-                            </div>
-                        </div>
-                        }
-                    </div>
-                </div>
-            </mat-tab>
-            <mat-tab label="Third"> Content 3 </mat-tab>
-        </mat-tab-group>
+            </div>
+        </div>
+    
     </mat-card-content>
 </mat-card>
-
-
-
-
-<!-- <div class="grid w-full grid-cols-3 sm:grid-cols-3 gap-8 py-8 px-12">
-    <div class="shadow-md shadow-orange-500 rounded-lg bg-gradient-to-b to-black from-gray-800 hover:scale-110 duration-700">
-        <img class="w-20 mx-auto" src="../assets/images/HTML.png" alt="html.png">
-        <p class="text-white">HTML</p>
-    </div> -->
-    <!-- @for (skillimg of skillsimgList; track $index) {
-        <div [ngClass]="skillimg.shadow" class="shadow-md rounded-lg bg-gradient-to-b to-black from-gray-800 hover:scale-110 duration-700">
-            <img class="w-50 mx-auto" [src]="skillimg.imgSrc" [alt]="skillimg.alt">
-            <p class="text-white">""</p>
-        </div>
-    } -->
- 
-<!-- </div> -->
-
-
-
-<!-- <div [ngClass]="skillimg.shadow"
-                                                    class="card shadow-md rounded-lg bg-gradient-to-b to-black from-gray-800 hover:scale-110 duration-700">
-                                                    <img class="w-50 mx-auto" [src]="skillimg.imgSrc" [alt]="skillimg.alt">
-                                                    <p class="text-white">""</p>
-                                                </div> -->
-                                            <!-- } -->
-                                            <!-- <div class="card shadow-md shadow-orange-500 rounded-lg bg-gradient-to-b to-black from-gray-800">
-                                                <div class="card-body shadow-md hover:scale-110 duration-700">
-                                                    <img class="" src="../assets/images/HTML.png" alt="">
-                                                    <p class="text-white">HTML</p>
-                                                </div>
-                                            </div> -->
-                                          <!-- </div>
-                                          <div class="col">
-                                            <h1>CSS</h1> 
-                                          </div>
-                                          <div class="col">
-                                            <h1>Angular</h1> 
-                                          </div>
-                                          <div class="col">
-                                            <h1>Angular Material</h1> 
-                                          </div> -->
-                                        <!-- </div> -->
-                                          <!-- <div class="col">
-                                            <h1>Karma</h1>
-                                          </div>
-                                          <div class="col">
-                                            <h1>Jasmine</h1> 
-                                          </div>
-                                          <div class="col">
-                                            <h1>Bootstrap</h1> 
-                                          </div>
-                                          <div class="col">
-                                            <h1>Ag-Grid</h1> 
-                                          </div>
-                                        </div> -->
-                    

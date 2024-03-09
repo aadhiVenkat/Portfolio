@@ -76,7 +76,40 @@ export class SkillsComponent {
       alt:"Ag-Grid.png",
       title:"AG-Grid",
       rating:4
-    }
+    },
+    {
+      id:9,
+      imgSrc:"../../assets/images/C-Sharp.png",
+      shadow:"shadow-indigo-500",
+      alt:"c#.png",
+      title:"C-Sharp",
+      rating:4
+    },
+    {
+      id:10,
+      imgSrc:"../../assets/images/dotnet-logo.png",
+      shadow:"shadow-indigo-500",
+      alt:".net.png",
+      title:"DotNet",
+      rating:4
+    },
+    {
+      id:11,
+      imgSrc:"../../assets/images/SQL.png",
+      shadow:"shadow-blue-500",
+      alt:"sql.png",
+      title:"SQL",
+      rating:4
+    },
+    {
+      id:12,
+      imgSrc:"../../assets/images/Python.png",
+      shadow:"shadow-yellow-600",
+      alt:"python.png",
+      title:"Python",
+      rating:4
+    },
+
   ]
 
   BackEndList= [

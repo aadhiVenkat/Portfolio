@@ -6,3 +6,20 @@
 .rating:hover{
     background-color: red;
 }
+
+mat-card,p{
+    animation: bottomSlide 4s ease alternate;
+    animation-delay: .2s;
+}
+
+img{
+    animation: rightSlide 6s ease alternate;
+    animation-delay: .2s;
+}
+
+.card,h1{
+    animation: leftSlide 5s ease alternate;
+    animation-delay: .2s;
+    /* font-size: 35px;
+    color: lightsteelblue; */
+}
