@@ -1,20 +1,78 @@
-<div>
-    <div>
-        <app-header></app-header>
-    </div>
-    <div style="margin-top: 9%;" class="mx-auto component_width">
+<app-header></app-header>
+<div class="container">
+    @defer (on viewport) {
+    <div style="margin-top: 9%;" id="base" class="mx-auto component_width">
         <app-base></app-base>
     </div>
-    <div style="margin-top: 50px;display: block;" class="mx-auto component_width">
-        <app-about></app-about>
+    }
+    @loading (after 150ms; minimum 150ms){
+    <div style="margin-top: 9%;" class="mx-auto component_width">Loading...</div>
+    }
+    @placeholder (minimum 150ms){
+    <div style="margin-top: 9%;" class="mx-auto component_width">Base Component</div>
+    }
+    @error {
+    <div style="margin-top: 9%;" class="mx-auto component_width">Unable to load component</div>
+    }
+
+    @defer (on viewport) {
+    <div style="margin-top: 5%;" class="mx-auto component_width">
+        <app-about id="about"></app-about>
     </div>
-    <div style="margin-top: 50px;display: block;" class="mx-auto component_width">
-        <app-skills></app-skills>
+    }
+    @loading (after 200ms; minimum 200ms){
+    <div style="margin-top: 5%;" class="mx-auto component_width">Loading...</div>
+    }
+    @placeholder (minimum 200ms){
+    <div style="margin-top: 5%;" class="mx-auto component_width">Base Component</div>
+    }
+    @error {
+    <div style="margin-top: 5%;" class="mx-auto component_width">Unable to load component</div>
+    }
+
+
+    @defer (on viewport) {
+    <div style="margin-top: 5%;" class="mx-auto component_width">
+        <app-skills id="skills"></app-skills>
     </div>
-    <div style="margin-top: 50px;display: block;" class="mx-auto component_width">
-        <app-proficiencies></app-proficiencies>
+    }
+    @loading (after 250ms; minimum 250ms){
+    <div style="margin-top: 5%;" class="mx-auto component_width">Loading...</div>
+    }
+    @placeholder (minimum 250ms){
+    <div style="margin-top: 5%;" class="mx-auto component_width">Base Component</div>
+    }
+    @error {
+    <div style="margin-top: 5%;" class="mx-auto component_width">Unable to load component</div>
+    }
+
+    @defer (on viewport) {
+    <div style="margin-top: 5%;" class="mx-auto component_width">
+        <app-proficiencies id="proficiencies"></app-proficiencies>
     </div>
-    <div style="margin-top: 50px;display: block;" class="mx-auto component_width">
-        <app-contact></app-contact>
+    }
+    @loading (after 350ms; minimum 350ms){
+    <div style="margin-top: 5%;" class="mx-auto component_width">Loading...</div>
+    }
+    @placeholder (minimum 350ms){
+    <div style="margin-top: 5%;" class="mx-auto component_width">Base Component</div>
+    }
+    @error {
+    <div style="margin-top: 5%;" class="mx-auto component_width">Unable to load component</div>
+    }
+
+    @defer (on viewport) {
+    <div style="margin-top: 5%;" class="mx-auto component_width">
+        <app-contact id="contact"></app-contact>
     </div>
+    }
+    @loading (after 1000ms; minimum 1000ms){
+    <div style="margin-top: 5%;" class="mx-auto component_width">Loading...</div>
+    }
+    @placeholder (minimum 1000ms){
+    <div style="margin-top: 5%;" class="mx-auto component_width">Base Component</div>
+    }
+    @error {
+    <div style="margin-top: 5%;" class="mx-auto component_width">Unable to load component</div>
+    }
 </div>
