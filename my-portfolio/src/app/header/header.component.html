@@ -1,11 +1,11 @@
-<mat-toolbar class="fixed-top fw-normal headerColor">
+<mat-toolbar class="fixed-top fw-normal headerColor toolbar">
     <h2>Portfolio</h2>
     <div class="container-fluid justify-content-end" id="bigScreen">
-        <a mat-button class="float-end" href="#contact">Contact</a>
-        <a mat-button class="float-end me-2" href="#proficiencies">Proficiencies</a>
-        <a mat-button class="float-end me-2" href="#skills">Skills</a>
-        <a mat-button class="float-end me-2" href="#about">About</a>
-        <a mat-button class="float-end me-2" href="#base">Home</a>
+        <button mat-button class="float-end" (click)="scrollToTarget('contact');">Contact</button>
+        <button mat-button class="float-end me-2" (click)="scrollToTarget('proficiencies');">Proficiencies</button>
+        <button mat-button class="float-end me-2" (click)="scrollToTarget('skills');">Skills</button>
+        <button mat-button class="float-end me-2" (click)="scrollToTarget('about');">About</button>
+        <button mat-button class="float-end me-2" (click)="scrollToTarget('base');">Home</button>
     </div>
     
     <div id="mobileScreen" class="ms-auto">
@@ -22,11 +22,11 @@
                 </button>
             </div>
             <div class="offcanvas-body navbar-nav flex-grow-1 pe-3">
-                <button mat-button data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive">Home</button>
-                <button mat-button data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive">About</button>
-                <button mat-button data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive">Skills</button>
-                <button mat-button data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive">Qualifications</button>
-                <button mat-button data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive">Contact</button>
+                <button mat-button data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive" (click)="scrollToTarget('base');">Home</button>
+                <button mat-button data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive" (click)="scrollToTarget('about');">About</button>
+                <button mat-button data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive" (click)="scrollToTarget('skills');">Skills</button>
+                <button mat-button data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive" (click)="scrollToTarget('proficiencies');">Proficiencies</button>
+                <button mat-button data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive" (click)="scrollToTarget('contact');">Contact</button>
             </div>
         </div>
     </div>
