@@ -5,13 +5,14 @@ import { HeaderComponent } from './header/header.component';
 import { BaseComponent } from './base/base.component';
 import { SkillsComponent } from './skills/skills.component';
 import { ProficienciesComponent } from './proficiencies/proficiencies.component';
+import { ContactComponent } from './contact/contact.component';
 
 @Component({
   selector: 'app-root',
   standalone:true,
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  imports:[AboutComponent, MatCardModule, HeaderComponent, BaseComponent, SkillsComponent,ProficienciesComponent]
+  imports:[AboutComponent, MatCardModule, HeaderComponent, BaseComponent, SkillsComponent,ProficienciesComponent, ContactComponent]
 })
 export class AppComponent {
   title = 'my-portfolio';

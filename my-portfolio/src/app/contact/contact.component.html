@@ -1,0 +1,75 @@
+<mat-card class="mx-auto bg-dark shadow-lg p-3 mb-5 rounded text-white">
+    <div class="container text-left">
+        <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2">
+            <mat-card-content class="pt-0 my-auto">
+                <div class="col gap-6 py-2">
+                    <div class="card bg-gray-800 shadow-md rounded-lg bg-gradient-to-b hover:shadow-yellow-600">
+                        <div class="card-body  text-white fw-medium lh-lg ">
+                            <p>Thank you for taking the time to review my portfolio. If you have any questions, inquiries, or would like to discuss potential opportunities, I would love to hear from you.</p>
+                            <div class="mt-4">
+                                <div class="d-flex mt-2">
+                                    <mat-icon>
+                                        <img src="../../assets/images/mail.svg" alt="">
+                                    </mat-icon>
+                                    <span class="px-1 fw-semibold">aadhivenkat&#64;gmail.com</span>
+                                </div>
+                                <div class="d-flex mt-2">
+                                    <mat-icon>
+                                        <img src="../../assets/images/linkedin.svg" alt="">
+                                    </mat-icon>
+                                    <a href="https://www.linkedin.com/in/aadhivenkat" class="px-1 fw-semibold underline hover:text-blue-600" >aadhiVenkat</a>
+                                </div>
+                                <div class="d-flex mt-2">
+                                    <mat-icon>
+                                        <img src="../../assets/images/github.svg" alt="">
+                                    </mat-icon>
+                                    <a href="https://github.com/aadhiVenkat" class="px-1 fw-semibold underline hover:text-blue-600">aadhiVenkat</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </mat-card-content>
+            <mat-card-content>
+                <mat-card-header class="fs-1 fw-semibold text-decoration-underline">Contact Me</mat-card-header>
+                <div class="card bg-teal-200 shadow-md rounded-lg bg-gradient-to-b">
+                    <div class="card-body  text-white fw-medium text-center">
+                        <div class="row">
+                            <!-- <mat-icon> -->
+                                <!-- <img src="../../assets/images/user.svg" alt="" class="mx-auto" style="width: 100px;"> -->
+                            <!-- </mat-icon> -->
+                        </div>
+                        <div class="row">
+                            <mat-form-field>
+                                <mat-label>Enter your email</mat-label>
+                                <input matInput placeholder="pat@example.com" [formControl]="email" required>
+                                @if (email.invalid) {
+                                <mat-error>{{getErrorMessage()}}</mat-error>
+                                }
+                            </mat-form-field>
+                        </div>
+                        <div class="row">
+                            <mat-form-field>
+                                <mat-label>Enter your Company Name</mat-label>
+                                <input matInput placeholder="Company" [formControl]="companyName" required>
+                                @if (email.invalid) {
+                                <mat-error>{{getErrorMessage()}}</mat-error>
+                                }
+                            </mat-form-field>
+                        </div>
+                        <div class="row">
+                            <mat-form-field>
+                                <mat-label>Message</mat-label>
+                                <textarea matInput [formControl]="message" style="height: 150px;"></textarea>
+                            </mat-form-field>
+                        </div>
+                        <div class="row">
+                            <input class="btn ml-auto mr-3 w-fit bg-white text-fuchsia-600 fw-semibold hover:text-black" type="submit" value="Let's Connect">
+                        </div>
+                    </div>
+                </div>
+            </mat-card-content>
+        </div>
+    </div>
+   
+</mat-card>

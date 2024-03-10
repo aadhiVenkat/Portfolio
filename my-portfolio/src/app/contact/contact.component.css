@@ -1,0 +1,21 @@
+mat-card,p{
+    animation: topSlide 2s ease alternate;
+    animation-delay: .2s;
+}
+
+img,input{
+    animation: leftSlide 2s ease alternate;
+    animation-delay: .4s;
+}
+
+h1{
+    animation: rightSlide 2s ease alternate;
+    animation-delay: .3s;
+    font-size: 35px;
+    color: lightsteelblue;
+}
+
+mat-card-content,mat-form-field{
+    animation: bottomSlide 5s ease alternate;
+    animation-delay: .3s;
+}
