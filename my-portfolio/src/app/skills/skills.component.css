@@ -7,7 +7,7 @@
     background-color: red;
 }
 
-mat-card,p{
+/* mat-card,p{
     animation: bottomSlide 4s ease alternate;
     animation-delay: .2s;
 }
@@ -22,4 +22,4 @@ img{
     animation-delay: .2s;
     /* font-size: 35px;
     color: lightsteelblue; */
-}
+/* } */
