@@ -34,7 +34,7 @@ export class SkillsComponent {
       imgSrc:"../../assets/images/JS.png",
       shadow:"shadow-yellow-600",
       alt:"JS.png",
-      title:"Java Script",
+      title:"Javascript",
       rating:4
     },
     {
