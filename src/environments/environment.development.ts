@@ -1,13 +1,13 @@
 export const environment = {
-     // npm run ng generate environments  to generate environments
-     production: false,
-     firebase: {
-         apiKey: "AIzaSyAEYLul3q7O6R27eOuICOHzEvW5v7PZsuo",
-         authDomain: "aadhivenkat-1379c.firebaseapp.com",
-         projectId: "aadhivenkat-1379c",
-         storageBucket: "aadhivenkat-1379c.appspot.com",
-         messagingSenderId: "1009295441571",
-         appId: "1:1009295441571:web:09cd1b0df76adb8a604916",
-         measurementId: "G-4J24H4YSYK"
-     }
+    // npm run ng generate environments  to generate environments
+    production: false,
+    firebase: {
+        apiKey: "AIzaSyDRuS1rDXm6ABK2rieTie9PD0aCUvnrQ8Y",
+        authDomain: "aadhi-venkat-portfolio.firebaseapp.com",
+        projectId: "aadhi-venkat-portfolio",
+        storageBucket: "aadhi-venkat-portfolio.appspot.com",
+        messagingSenderId: "1008677946036",
+        appId: "1:1008677946036:web:c3b15999523c5dd6a30de1",
+        measurementId: "G-3TR3NVT74L"
+    }
 };
