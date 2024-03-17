@@ -19,3 +19,11 @@ mat-card-content,mat-form-field{
     animation: bottomSlide 5s ease alternate;
     animation-delay: .3s;
 }
+
+.cursor{
+    cursor: not-allowed !important;
+}
+
+.mdc-button__label{
+    color: fuchsia !important;
+}

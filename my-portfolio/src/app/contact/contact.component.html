@@ -17,13 +17,19 @@
                                     <mat-icon>
                                         <img src="../../assets/images/linkedin.svg" alt="">
                                     </mat-icon>
-                                    <a href="https://www.linkedin.com/in/aadhivenkat" class="px-1 fw-semibold underline hover:text-blue-600" >aadhiVenkat</a>
+                                    <a href="https://www.linkedin.com/in/aadhivenkat" target="_blank" class="px-1 fw-semibold underline hover:text-blue-600" >aadhiVenkat</a>
                                 </div>
                                 <div class="d-flex mt-2">
                                     <mat-icon>
                                         <img src="../../assets/images/github.svg" alt="">
                                     </mat-icon>
-                                    <a href="https://github.com/aadhiVenkat" class="px-1 fw-semibold underline hover:text-blue-600">aadhiVenkat</a>
+                                    <a href="https://github.com/aadhiVenkat" target="_blank" class="px-1 fw-semibold underline hover:text-blue-600">aadhiVenkat</a>
+                                </div>
+                                <div class="d-flex mt-2">
+                                    <mat-icon>
+                                        <img src="../../assets/images/resume1.png" alt="">
+                                    </mat-icon>
+                                    <a href="../../assets/images/VENKATAADINARAYANA.pdf" target="_blank" download="Venkata_Adi_Narayana_P" class="px-1 fw-semibold underline hover:text-blue-600">Resume</a>
                                 </div>
                             </div>
                         </div>
@@ -64,7 +70,8 @@
                             </mat-form-field>
                         </div>
                         <div class="row">
-                            <input class="btn ml-auto mr-3 w-fit bg-white text-fuchsia-600 fw-semibold hover:text-black" type="submit" value="Let's Connect">
+                            <input class="btn ml-auto mr-3 w-fit bg-white text-fuchsia-600 fw-semibold hover:text-black" [disabled]="disbaleSubmit"  type="submit" value="Let's Connect" 
+                            data-bs-toggle="modal" data-bs-target="#staticBackdrop" (click)="submit();">
                         </div>
                     </div>
                 </div>
@@ -73,3 +80,21 @@
     </div>
    
 </mat-card>
+
+  <!-- Modal -->
+<div class="modal fade " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog ">
+        <div class="modal-content bg-black text-white-50">
+            <div class="modal-header">
+                <h1 class="modal-title fs-6 fw-bolder" id="staticBackdropLabel">Thank You!</h1>
+                <button type="button" mat-icon-button class="ml-auto" aria-label="Close" data-bs-dismiss="modal">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </div>
+            <div class="modal-body text-white-50 fw-semibold">
+                I've received your details. I'll be connect with you shortly.
+            </div>
+        </div>
+    </div>
+</div>
