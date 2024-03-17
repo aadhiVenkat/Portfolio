@@ -52,7 +52,13 @@
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.development.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -92,6 +98,23 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "my-portfolio:build:production",
+              "serveTarget": "my-portfolio:serve:production"
+            },
+            "development": {
+              "buildTarget": "my-portfolio:build:development",
+              "serveTarget": "my-portfolio:serve:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
