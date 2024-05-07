@@ -13,7 +13,7 @@ declare var Typed: any;
 export class BaseComponent implements OnInit {
   ngOnInit(): void {
     const typed = new Typed('#element', {
-      strings: ['Fullstack Developer', 'Fullstack Web Developer', 'Fullstack Engineer'],
+      strings: ['Fullstack Developer', 'Fullstack Web Developer', 'Fullstack Engineer', 'Fullstack .NET Developer'],
       typeSpeed: 100,
       backSpeed: 100,
       showCursor: true,
