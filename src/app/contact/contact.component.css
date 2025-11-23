@@ -1,7 +1,10 @@
-/* Contact Component Styles - All styles scoped to contact-container */
+/* Contact Component Styles */
 .contact-container {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
-    border: 1px solid rgba(0, 123, 255, 0.2) !important;
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border-primary) !important;
+    box-shadow: var(--shadow-lg);
+    padding: 2.5rem !important;
+    border-radius: 16px !important;
 }
 
 .contact-container .contact-info-section {
@@ -15,25 +18,40 @@
 }
 
 .contact-container .contact-link-item:hover {
-    background-color: rgba(0, 123, 255, 0.1);
+    background-color: var(--bg-card-hover);
     transform: translateX(5px);
 }
 
+.contact-container .contact-link-item a {
+    color: var(--text-primary);
+}
+
 .contact-container .contact-link-item a:hover {
-    color: #00d4ff !important;
+    color: var(--accent-cyan) !important;
     text-decoration: underline !important;
+}
+
+[data-theme="light"] .contact-container .contact-link-item a:hover {
+    color: #0891b2 !important;
+}
+
+.contact-container .contact-link-item mat-icon {
+    color: var(--accent-blue);
+}
+
+[data-theme="light"] .contact-container .contact-link-item mat-icon {
+    color: #0891b2;
 }
 
 .contact-container .contact-form {
     width: 100%;
 }
 
-/* Material Angular v17 Outline Form Field Styling */
+/* Material Form Field Styling */
 .contact-container .contact-form .mat-mdc-form-field {
     width: 100%;
 }
 
-/* Remove all internal borders and lines */
 .contact-container .contact-form .mat-mdc-text-field-wrapper {
     background-color: transparent !important;
     border: none !important;
@@ -48,38 +66,42 @@
 
 .contact-container .contact-form .mdc-text-field__input {
     background: transparent !important;
-}
-
-
-
-/* Input Text Color */
-.contact-container .contact-form .mdc-text-field__input {
-    color: #ffffff !important;
-    caret-color: #007bff !important;
+    color: var(--text-primary) !important;
+    caret-color: var(--accent-blue) !important;
     border: none !important;
     outline: none !important;
     box-shadow: none !important;
 }
 
-
-/* Label Color */
+/* Label Colors */
 .contact-container .contact-form .mdc-floating-label {
-    color: rgba(255, 255, 255, 0.7) !important;
+    color: var(--text-secondary) !important;
 }
 
 .contact-container .contact-form .mdc-floating-label--float-above {
-    color: #007bff !important;
+    color: var(--accent-blue) !important;
 }
 
+/* Outline Colors */
+.contact-container .contact-form .mdc-notched-outline__leading,
+.contact-container .contact-form .mdc-notched-outline__trailing,
+.contact-container .contact-form .mdc-notched-outline__notch {
+    border-color: var(--border-primary) !important;
+}
 
+.contact-container .contact-form .mat-mdc-form-field.mat-focused .mdc-notched-outline__leading,
+.contact-container .contact-form .mat-mdc-form-field.mat-focused .mdc-notched-outline__trailing,
+.contact-container .contact-form .mat-mdc-form-field.mat-focused .mdc-notched-outline__notch {
+    border-color: var(--accent-blue) !important;
+}
 
-.contact-container .contact-form .mat-mdc-form-field .mdc-notched-outline__notch{
+.contact-container .contact-form .mat-mdc-form-field .mdc-notched-outline__notch {
     border-left: none !important;
     border-right: none !important;
 }
 
 .contact-container .contact-form .mat-mdc-form-field-error {
-    color: #ff6b6b !important;
+    color: var(--accent-danger) !important;
 }
 
 /* Submit Button */
@@ -124,13 +146,13 @@
 .contact-container .alert-danger {
     background-color: rgba(220, 53, 69, 0.2);
     border: 1px solid rgba(220, 53, 69, 0.5);
-    color: #ff6b6b;
+    color: var(--accent-danger);
 }
 
 .contact-container .alert-success {
     background-color: rgba(40, 167, 69, 0.2);
     border: 1px solid rgba(40, 167, 69, 0.5);
-    color: #51cf66;
+    color: var(--accent-success);
 }
 
 .contact-container .alert mat-icon {
@@ -145,5 +167,11 @@
 @media (max-width: 991px) {
     .contact-container .contact-info-section {
         margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 1.5rem !important;
     }
 }

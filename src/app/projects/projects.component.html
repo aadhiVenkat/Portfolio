@@ -1,37 +1,37 @@
-<mat-card class="mx-auto bg-dark shadow-lg p-4 mb-5 rounded text-white skill projects-container">
+<mat-card class="skill projects-container">
     <mat-card-header class="mb-4">
         <div class="d-flex align-items-center mb-2">
-            <mat-icon class="me-3 text-primary" style="font-size: 2.5rem; width: 2.5rem; height: 2.5rem;">folder_special</mat-icon>
+            <mat-icon class="me-3 project-header-icon" style="font-size: 2.5rem; width: 2.5rem; height: 2.5rem;">folder_special</mat-icon>
             <h1 class="fs-1 fw-bold mb-0 text-decoration-underline project-header">Projects</h1>
         </div>
-        <p class="text-muted ms-5">Showcasing my work and technical expertise</p>
+        <p class="project-subtitle ms-5">Showcasing my work and technical expertise</p>
     </mat-card-header>
     <mat-card-content class="col-md-12 my-auto w-100">
         <div class="container-fluid px-0">
             <div class="row row-cols-1 row-cols-lg-2 g-4 mt-2">
                 @for (project of projects; track project.id) {
                 <div class="col">
-                    <div class="card text-bg-dark h-100 project-card border-0">
+                    <div class="card h-100 project-card border-0">
                         <div class="card-body p-4 d-flex flex-column">
                             <div class="mb-3">
                                 <div class="d-flex align-items-center justify-content-between mb-3">
-                                    <h3 class="card-title fw-bold mb-0 text-primary project-title">{{project.title}}</h3>
-                                    <mat-icon class="text-primary project-icon">rocket_launch</mat-icon>
+                                    <h3 class="card-title fw-bold mb-0 project-title">{{project.title}}</h3>
+                                    <mat-icon class="project-icon">rocket_launch</mat-icon>
                                 </div>
                                 <div class="project-divider mb-3"></div>
                             </div>
                             
-                            <p class="card-text text-light mb-4 project-description">{{project.description}}</p>
+                            <p class="card-text mb-4 project-description">{{project.description}}</p>
                             
                             @if (project.features) {
                             <div class="mb-4">
-                                <h6 class="text-info fw-semibold mb-2">
+                                <h6 class="fw-semibold mb-2 features-title">
                                     <mat-icon class="me-1" style="font-size: 18px; vertical-align: middle;">star</mat-icon>
                                     Key Features
                                 </h6>
                                 <div class="d-flex flex-wrap gap-2">
                                     @for (feature of project.features; track feature) {
-                                    <span class="badge bg-primary bg-opacity-25 text-primary border border-primary feature-badge">
+                                    <span class="badge feature-badge">
                                         <mat-icon class="me-1" style="font-size: 14px; vertical-align: middle;">check_circle</mat-icon>
                                         {{feature}}
                                     </span>
@@ -41,13 +41,13 @@
                             }
                             
                             <div class="mb-4">
-                                <h6 class="text-info fw-semibold mb-2">
+                                <h6 class="fw-semibold mb-2 tech-title">
                                     <mat-icon class="me-1" style="font-size: 18px; vertical-align: middle;">build</mat-icon>
                                     Technologies Used
                                 </h6>
                                 <div class="d-flex flex-wrap gap-2">
                                     @for (tech of project.technologies; track tech) {
-                                    <span class="badge bg-gradient tech-badge">{{tech}}</span>
+                                    <span class="badge tech-badge">{{tech}}</span>
                                     }
                                 </div>
                             </div>

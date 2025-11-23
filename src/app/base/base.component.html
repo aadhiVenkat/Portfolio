@@ -1,31 +1,44 @@
-<!-- <div class="card mt-8 mx-auto bg-dark text-white border-dark" style="width: 85%;">
-    <div class="row g-0">
-        <div class="col-md-3">
-            <img src="../assets/images/Logo2.jpeg" alt="" class="img-fluid rounded-start">
-        </div>
-        <div class="col-md-8 my-auto">
-            <div class="card-body">
-                <p style="font-size: 30px;">Hello It's me</p>
-                <h1 class="card-title fw-bold" style="font-size: 35px;color: lightsteelblue;">Venkata Adi Narayana <span>Penjuru</span></h1>
-                <p class="card-text" style="font-size: 30px;">I'm a Full Stack Developer.</p>
-                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+<div class="hero-section">
+    <mat-card class="hero-card">
+        <div class="hero-content">
+            <div class="hero-image-container">
+                <div class="image-wrapper">
+                    <img mat-card-image src="../assets/images/Logo2.png" alt="Profile" class="hero-image logo2">
+                    <img mat-card-image src="../assets/images/Logo1.jpg" alt="Profile" class="hero-image logo1">
+                    <div class="image-glow"></div>
+                </div>
             </div>
-        </div>
-    </div>
-</div> -->
+            
+            <mat-card-content class="hero-text">
+                <div class="greeting-section">
+                    <p class="greeting">Hello, I'm</p>
+                    <h1 class="name">Venkata Adi Narayana Penjuru</h1>
+                    <div class="role-container">
+                        <p class="role-label">I'm a </p>
+                        <span id="element" class="role-typed"></span>
+                    </div>
+                    
+                    <div class="hero-actions">
+                        <button mat-raised-button color="primary" class="cta-button" (click)="scrollToContact()">
+                            <mat-icon>mail</mat-icon>
+                            Get In Touch
+                        </button>
+                        <button mat-stroked-button class="secondary-button" (click)="downloadResume()">
+                            <mat-icon>download</mat-icon>
+                            Download Resume
+                        </button>
+                    </div>
 
-<mat-card class="mt-8 mx-auto bg-dark text-white">
-    <div class="row g-0">
-        <div class="col-md-3 my-auto">
-            <img mat-card-image src="../assets/images/Logo2.png" alt="" class="img-fluid rounded-start mt-3 logo2">
-            <img mat-card-image src="../assets/images/Logo1.jpg" alt="" class="img-fluid rounded-start rounded-1 logo1">
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/aadhivenkat" target="_blank" class="social-icon" aria-label="LinkedIn">
+                            <img src="../../assets/images/Linkedin.png" alt="LinkedIn">
+                        </a>
+                        <a href="https://github.com/aadhiVenkat" target="_blank" class="social-icon" aria-label="GitHub">
+                            <img src="../../assets/images/GITHUB.png" alt="GitHub">
+                        </a>
+                    </div>
+                </div>
+            </mat-card-content>
         </div>
-        <mat-card-content class="col-md-8 my-auto">
-            <div>
-                <p>Hello It's me</p>
-                <h1 class="fw-bold">Venkata Adi Narayana Penjuru</h1>
-                <p>I'm a <span id="element" class="fw-bold"></span></p>
-            </div>
-        </mat-card-content>
-    </div>
-</mat-card>
+    </mat-card>
+</div>

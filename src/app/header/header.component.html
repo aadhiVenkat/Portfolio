@@ -1,6 +1,15 @@
-<mat-toolbar [class.scrolled]="isScrolled" class="fixed-top fw-normal headerColor toolbar">
-    <span class="fw-bold hover:text-black">Portfolio</span>
-    <div class="container-fluid justify-content-end" id="bigScreen">
+<mat-toolbar [class.scrolled]="isScrolled" class="fixed-top toolbar">
+    <span class="logo fw-bold">Portfolio</span>
+    
+    <div class="container-fluid justify-content-end align-items-center" id="bigScreen">
+        <!-- Theme Toggle Button -->
+        <button mat-icon-button 
+                class="theme-toggle me-3" 
+                (click)="toggleTheme()"
+                [matTooltip]="themeService.isDark() ? 'Switch to Light Mode' : 'Switch to Dark Mode'">
+            <mat-icon>{{ themeService.isDark() ? 'light_mode' : 'dark_mode' }}</mat-icon>
+        </button>
+
         <button mat-button 
                 class="float-end nav-button" 
                 [class.active]="isActive('contact')"
@@ -39,20 +48,29 @@
         </button>
     </div>
 
-    <div id="mobileScreen" class="ms-auto">
+    <div id="mobileScreen" class="ms-auto d-flex align-items-center">
+        <!-- Theme Toggle Button for Mobile -->
+        <button mat-icon-button 
+                class="theme-toggle me-2" 
+                (click)="toggleTheme()"
+                [matTooltip]="themeService.isDark() ? 'Switch to Light Mode' : 'Switch to Dark Mode'">
+            <mat-icon>{{ themeService.isDark() ? 'light_mode' : 'dark_mode' }}</mat-icon>
+        </button>
+
         <button mat-icon-button aria-label="menu icon" data-bs-toggle="offcanvas" data-bs-target="#offcanvasResponsive"
             aria-controls="offcanvasResponsive">
             <mat-icon>menu</mat-icon>
         </button>
-        <div class="offcanvas-lg offcanvas-end headerColor" style="transition: 0.5s;" tabindex="-1"
+        <div class="offcanvas-lg offcanvas-end mobile-menu" style="transition: 0.5s;" tabindex="-1"
             id="offcanvasResponsive" aria-labelledby="offcanvasResponsiveLabel">
             <div class="offcanvas-header">
+                <h5 class="offcanvas-title fw-bold">Menu</h5>
                 <button type="button" mat-icon-button data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive"
                     aria-label="Close">
                     <mat-icon>close</mat-icon>
                 </button>
             </div>
-            <div class="offcanvas-body ">
+            <div class="offcanvas-body">
                 <div class="navbar-nav flex-grow-1 pe-3">
                     <button mat-button data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive"
                         (click)="scrollToTarget('base');">Home</button>
@@ -68,20 +86,20 @@
                         (click)="scrollToTarget('contact');">Contact</button>
                 </div>
                 <div class="mt-5">
-                    <div class="d-flex mt-2" style="margin-left: 32%;">
-                        <a href="https://www.linkedin.com/in/aadhivenkat" target="_blank">
+                    <div class="d-flex mt-2 justify-content-center gap-3">
+                        <a href="https://www.linkedin.com/in/aadhivenkat" target="_blank" class="social-link">
                             <mat-icon>
-                                <img src="../../assets/images/Linkedin.png" alt="" class="hover:scale-125">
+                                <img src="../../assets/images/Linkedin.png" alt="LinkedIn">
                             </mat-icon>
                         </a>
-                        <a href="https://github.com/aadhiVenkat" target="_blank" class="mx-3">
+                        <a href="https://github.com/aadhiVenkat" target="_blank" class="social-link">
                             <mat-icon>
-                                <img src="../../assets/images/GITHUB.png" alt="" class="hover:scale-125">
+                                <img src="../../assets/images/GITHUB.png" alt="GitHub">
                             </mat-icon>
                         </a>
-                        <a href="../../assets/images/VENKATAADINARAYANA.pdf" target="_blank" download="Venkata_Adi_Narayana_P">
+                        <a href="../../assets/images/VENKATAADINARAYANA.pdf" target="_blank" download="Venkata_Adi_Narayana_P" class="social-link">
                             <mat-icon>
-                                <img src="../../assets/images/Resume.png" alt="" class="hover:scale-125">
+                                <img src="../../assets/images/Resume.png" alt="Resume">
                             </mat-icon>
                         </a>
                     </div>

@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { APP_CONSTANTS } from '../constants/app.constants';
+import { ThemeService } from '../services/theme.service';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, MatButtonModule, MatIconModule, MatToolbarModule],
+  imports: [CommonModule, MatButtonModule, MatIconModule, MatToolbarModule, MatTooltipModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
@@ -16,7 +18,9 @@ export class HeaderComponent implements OnDestroy {
   isScrolled = false;
   activeSection = 'base';
 
-  @HostListener('window:scroll', ['$event'])
+  constructor(public themeService: ThemeService) {}
+
+  @HostListener('window:scroll')
   onWindowScroll(): void {
     this.isScrolled = window.scrollY > 50;
     this.updateActiveSection();
@@ -34,6 +38,10 @@ export class HeaderComponent implements OnDestroy {
         behavior: 'smooth'
       });
     }
+  }
+
+  toggleTheme(): void {
+    this.themeService.toggleTheme();
   }
 
   private updateActiveSection(): void {

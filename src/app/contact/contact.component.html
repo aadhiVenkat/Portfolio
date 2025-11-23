@@ -1,33 +1,33 @@
-<mat-card class="mx-auto bg-dark shadow-lg p-4 mb-5 rounded text-white contact-container">
+<mat-card class="contact-container">
     <div class="container-fluid">
         <div class="row g-4">
             <!-- Left Side - Contact Info -->
             <div class="col-12 col-lg-6">
                 <div class="contact-info-section">
-                    <h3 class="mb-3 text-primary fw-bold">Get In Touch</h3>
-                    <p class="mb-4 text-light">Thank you for taking the time to review my portfolio. If you have any questions, inquiries, or would like to discuss potential opportunities, I would love to hear from you.</p>
+                    <h3 class="contact-section-title mb-3 fw-bold">Get In Touch</h3>
+                    <p class="contact-description mb-4">Thank you for taking the time to review my portfolio. If you have any questions, inquiries, or would like to discuss potential opportunities, I would love to hear from you.</p>
                     <div class="contact-links">
                         <div class="contact-link-item d-flex align-items-center mb-3">
-                            <mat-icon class="me-3 text-primary">email</mat-icon>
-                            <a href="mailto:aadhivenkat4@gmail.com" class="text-white text-decoration-none fw-semibold">
+                            <mat-icon class="contact-icon me-3">email</mat-icon>
+                            <a href="mailto:aadhivenkat4@gmail.com" class="contact-link text-decoration-none fw-semibold">
                                 aadhivenkat4&#64;gmail.com
                             </a>
                         </div>
                         <div class="contact-link-item d-flex align-items-center mb-3">
-                            <mat-icon class="me-3 text-primary">work</mat-icon>
-                            <a href="https://www.linkedin.com/in/aadhivenkat" target="_blank" rel="noopener noreferrer" class="text-white text-decoration-none fw-semibold">
+                            <mat-icon class="contact-icon me-3">work</mat-icon>
+                            <a href="https://www.linkedin.com/in/aadhivenkat" target="_blank" rel="noopener noreferrer" class="contact-link text-decoration-none fw-semibold">
                                 LinkedIn Profile
                             </a>
                         </div>
                         <div class="contact-link-item d-flex align-items-center mb-3">
-                            <mat-icon class="me-3 text-primary">code</mat-icon>
-                            <a href="https://github.com/aadhiVenkat" target="_blank" rel="noopener noreferrer" class="text-white text-decoration-none fw-semibold">
+                            <mat-icon class="contact-icon me-3">code</mat-icon>
+                            <a href="https://github.com/aadhiVenkat" target="_blank" rel="noopener noreferrer" class="contact-link text-decoration-none fw-semibold">
                                 GitHub Profile
                             </a>
                         </div>
                         <div class="contact-link-item d-flex align-items-center mb-3">
-                            <mat-icon class="me-3 text-primary">description</mat-icon>
-                            <a href="../../assets/images/VENKATAADINARAYANA.pdf" target="_blank" download="Venkata_Adi_Narayana_P" class="text-white text-decoration-none fw-semibold">
+                            <mat-icon class="contact-icon me-3">description</mat-icon>
+                            <a href="../../assets/images/VENKATAADINARAYANA.pdf" target="_blank" download="Venkata_Adi_Narayana_P" class="contact-link text-decoration-none fw-semibold">
                                 Download Resume
                             </a>
                         </div>
@@ -37,7 +37,7 @@
 
             <!-- Right Side - Contact Form -->
             <div class="col-12 col-lg-6">
-                <h2 class="fs-1 fw-bold text-decoration-underline text-primary mb-4">Contact Me</h2>
+                <h2 class="contact-form-title fs-1 fw-bold text-decoration-underline mb-4">Contact Me</h2>
                 <form [formGroup]="contactForm" (ngSubmit)="submit()" class="contact-form">
                     <!-- Email Field -->
                     <mat-form-field appearance="outline" class="w-100 mb-3">
@@ -91,11 +91,15 @@
                             [disabled]="!isFormValid"
                             class="submit-btn">
                             @if (isSubmitting) {
-                                <mat-spinner diameter="20" class="me-2"></mat-spinner>
-                                <span>Sending...</span>
+                                <ng-container>
+                                    <mat-spinner diameter="20" class="me-2"></mat-spinner>
+                                    <span>Sending...</span>
+                                </ng-container>
                             } @else {
-                                <mat-icon class="me-2">send</mat-icon>
-                                <span>Let's Connect</span>
+                                <ng-container>
+                                    <mat-icon class="me-2">send</mat-icon>
+                                    <span>Let's Connect</span>
+                                </ng-container>
                             }
                         </button>
                     </div>

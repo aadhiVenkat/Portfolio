@@ -1,20 +1,315 @@
-p {
-  color: var(--bs-gray-800);
-  background-color: var(--bs-gray-100);
-  border: 1px solid var(--bs-gray-200);
-  border-radius: .25rem;
+/* Container Styles */
+.about-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0;
+  animation: fadeInUp 0.8s ease-out;
 }
 
-p {
-  color: var(--bs-purple);
+.about-content {
+  width: 100%;
 }
 
-mat-card-header {
-  animation: leftSlide 2s ease alternate;
-  animation-delay: .5s;
+/* Section Header */
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  animation: slideDown 0.6s ease-out;
 }
 
-mat-card {
-  animation: bottomSlide 2s ease normal;
-  animation-delay: .3s;
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.5px;
+}
+
+.title-underline {
+  width: 80px;
+  height: 4px;
+  background: var(--gradient-primary);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+/* Card Styles */
+.about-card {
+  background: var(--bg-card);
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  padding: 2.5rem;
+  animation: slideUp 0.8s ease-out 0.2s both;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--border-primary);
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+}
+
+/* Introduction Section */
+.intro-section {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.highlight-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--gradient-primary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.badge-icon {
+  font-size: 1.2rem;
+}
+
+.badge-text {
+  letter-spacing: 0.5px;
+}
+
+.intro-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  max-width: 800px;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
+/* Key Points Grid */
+.key-points-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.key-point {
+  background: var(--bg-card-hover);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-primary);
+  transition: all 0.3s ease;
+  animation: fadeIn 0.6s ease-out;
+}
+
+[data-theme="light"] .key-point {
+  background: linear-gradient(135deg, #f6f8fb 0%, #ffffff 100%);
+}
+
+.key-point:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent-primary);
+}
+
+.point-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.key-point:nth-child(2) .point-icon {
+  animation-delay: 0.2s;
+}
+
+.key-point:nth-child(3) .point-icon {
+  animation-delay: 0.4s;
+}
+
+.point-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.3px;
+}
+
+.point-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Mission Section */
+.mission-section {
+  background: var(--gradient-primary);
+  border-radius: 12px;
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.mission-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg width="40" height="40" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="1" fill="white" opacity="0.1"/></svg>');
+  opacity: 0.5;
+}
+
+.mission-quote {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.quote-icon {
+  width: 40px;
+  height: 40px;
+  color: rgba(255, 255, 255, 0.5);
+  flex-shrink: 0;
+}
+
+.mission-text {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: white;
+  margin: 0;
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-container {
+    padding: 0;
+  }
+
+  .section-header {
+    margin-bottom: 2rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .about-card {
+    padding: 1.5rem;
+  }
+
+  .key-points-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .intro-text {
+    font-size: 1.05rem;
+  }
+
+  .mission-quote {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .quote-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .mission-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .highlight-badge {
+    font-size: 0.85rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .key-point {
+    padding: 1.5rem;
+  }
+
+  .point-title {
+    font-size: 1.15rem;
+  }
+
+  .mission-section {
+    padding: 1.5rem;
+  }
 }

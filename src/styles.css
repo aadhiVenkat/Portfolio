@@ -3,9 +3,105 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
+/* ===========================
+   CSS VARIABLES - THEME SYSTEM
+   =========================== */
+:root {
+    /* Light Theme Colors - Optimized for accessibility and color-blindness */
+    --bg-primary: #f0f2f5;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #e5e7eb;
+    --bg-card: #ffffff;
+    --bg-card-hover: #f9fafb;
+    
+    --text-primary: #1f2937;
+    --text-secondary: #4b5563;
+    --text-tertiary: #6b7280;
+    --text-muted: #9ca3af;
+    --text-inverse: #ffffff;
+    
+    --border-primary: #d1d5db;
+    --border-secondary: #9ca3af;
+    --border-color: #d1d5db;
+    
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
+    --shadow-xl: 0 15px 50px rgba(0, 0, 0, 0.2);
+    --shadow-color: rgba(0, 0, 0, 0.15);
+    
+    /* Color-blind friendly palette (using blue-orange contrast) */
+    --accent-primary: #2563eb;
+    --accent-secondary: #7c3aed;
+    --accent-blue: #1d4ed8;
+    --accent-cyan: #0891b2;
+    --accent-color: #1d4ed8;
+    --accent-success: #059669;
+    --accent-warning: #d97706;
+    --accent-danger: #dc2626;
+    
+    --gradient-primary: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+    --gradient-blue: linear-gradient(135deg, #1d4ed8 0%, #0891b2 100%);
+    --gradient-dark: linear-gradient(135deg, #f0f2f5 0%, #ffffff 100%);
+    --accent-gradient: linear-gradient(135deg, #1d4ed8 0%, #0891b2 100%);
+    
+    --button-text: #ffffff;
+    
+    --scrollbar-track: #e5e7eb;
+    --scrollbar-thumb: #1d4ed8;
+    --scrollbar-thumb-hover: #1e40af;
+}
 
+[data-theme="dark"] {
+    /* Dark Theme Colors */
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #1a1a2e;
+    --bg-tertiary: #16213e;
+    --bg-card: #1a1a2e;
+    --bg-card-hover: #16213e;
+    
+    --text-primary: #ffffff;
+    --text-secondary: #e2e8f0;
+    --text-tertiary: #cbd5e0;
+    --text-muted: #94a3b8;
+    --text-inverse: #1a202c;
+    
+    --border-primary: rgba(255, 255, 255, 0.1);
+    --border-secondary: rgba(255, 255, 255, 0.2);
+    --border-color: rgba(255, 255, 255, 0.1);
+    
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.5);
+    --shadow-xl: 0 15px 50px rgba(0, 123, 255, 0.3);
+    --shadow-color: rgba(0, 123, 255, 0.3);
+    
+    --accent-primary: #667eea;
+    --accent-secondary: #764ba2;
+    --accent-blue: #007bff;
+    --accent-cyan: #00d4ff;
+    --accent-color: #007bff;
+    --accent-success: #51cf66;
+    --accent-warning: #ffd43b;
+    --accent-danger: #ff6b6b;
+    
+    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-blue: linear-gradient(135deg, #007bff 0%, #00d4ff 100%);
+    --gradient-dark: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+    --accent-gradient: linear-gradient(135deg, #007bff 0%, #00d4ff 100%);
+    
+    --button-text: #ffffff;
+    
+    --scrollbar-track: #1a1a2e;
+    --scrollbar-thumb: #667eea;
+    --scrollbar-thumb-hover: #007bff;
+}
+
+/* ===========================
+   BASE STYLES
+   =========================== */
 html {
     scroll-behavior: smooth;
 }
@@ -17,12 +113,14 @@ html, body {
 }
 
 body {
-    font-family: "Raleway", sans-serif;
+    font-family: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
-    color: #ffffff;
+    background: var(--bg-primary);
+    color: var(--text-primary);
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 .component_width {
@@ -30,64 +128,178 @@ body {
     max-width: 1200px;
 }
 
-/* Custom Scrollbar */
+/* ===========================
+   CUSTOM SCROLLBAR
+   =========================== */
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #1a1a2e;
+    background: var(--scrollbar-track);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(135deg, #007bff, #00d4ff);
-    border-radius: 5px;
+    background: var(--scrollbar-thumb);
+    border-radius: 6px;
+    border: 2px solid var(--scrollbar-track);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(135deg, #0056b3, #00b8d4);
+    background: var(--scrollbar-thumb-hover);
 }
 
-@keyframes topSlide{
-    0%{
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+/* ===========================
+   ANIMATIONS
+   =========================== */
+@keyframes topSlide {
+    0% {
         transform: translateY(100px);
         opacity: 0;
     }
-    100%{
+    100% {
         transform: translateY(0px);
         opacity: 1;
     }
 }
 
-@keyframes leftSlide{
-    0%{
+@keyframes leftSlide {
+    0% {
         transform: translateX(-100px);
         opacity: 0;
     }
-    100%{
+    100% {
         transform: translateX(0px);
         opacity: 1;
     }
 }
 
-@keyframes rightSlide{
-    0%{
+@keyframes rightSlide {
+    0% {
         transform: translateX(100px);
         opacity: 0;
     }
-    100%{
+    100% {
         transform: translateX(0px);
         opacity: 1;
     }
 }
 
-@keyframes bottomSlide{
-    0%{
+@keyframes bottomSlide {
+    0% {
         transform: translateY(-100px);
         opacity: 0;
     }
-    100%{
+    100% {
         transform: translateY(0px);
         opacity: 1;
     }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* ===========================
+   UTILITY CLASSES
+   =========================== */
+.text-gradient {
+    background: var(--gradient-blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.card-glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="light"] .card-glass {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* ===========================
+   THEME TRANSITION
+   =========================== */
+*,
+*::before,
+*::after {
+    transition: background-color 0.3s ease, 
+                border-color 0.3s ease, 
+                color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* Prevent transitions on page load */
+.preload * {
+    transition: none !important;
+}
+
+/* ===========================
+   MATERIAL ICONS THEME SUPPORT
+   =========================== */
+mat-icon {
+    color: inherit;
+}
+
+.mat-icon {
+    color: inherit;
+}
+
+/* Ensure Material buttons have proper text color */
+.mat-mdc-raised-button,
+.mat-mdc-outlined-button,
+.mat-mdc-unelevated-button {
+    color: var(--text-primary);
+}
+
+.mat-mdc-raised-button[color="primary"],
+.mat-mdc-outlined-button[color="primary"],
+.mat-mdc-unelevated-button[color="primary"] {
+    color: white !important;
+}
+
+/* Material card theme support */
+.mat-mdc-card {
+    background: var(--bg-card);
+    color: var(--text-primary);
+}
+
+/* Material form field theme support */
+.mat-mdc-form-field {
+    color: var(--text-primary);
 }
