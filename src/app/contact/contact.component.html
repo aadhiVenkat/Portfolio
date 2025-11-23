@@ -1,100 +1,106 @@
-<mat-card class="mx-auto bg-dark shadow-lg p-3 mb-5 rounded text-white">
-    <div class="container text-left">
-        <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2">
-            <mat-card-content class="pt-0 my-auto">
-                <div class="col gap-6 py-2">
-                    <div class="card bg-gray-800 shadow-md rounded-lg bg-gradient-to-b hover:shadow-yellow-600">
-                        <div class="card-body  text-white fw-medium lh-lg ">
-                            <p>Thank you for taking the time to review my portfolio. If you have any questions, inquiries, or would like to discuss potential opportunities, I would love to hear from you.</p>
-                            <div class="mt-4">
-                                <div class="d-flex mt-2">
-                                    <mat-icon>
-                                        <img src="../../assets/images/mail.svg" alt="">
-                                    </mat-icon>
-                                    <span class="px-1 fw-semibold" style="font-size: 14px;">aadhivenkat4&#64;gmail.com</span>
-                                </div>
-                                <div class="d-flex mt-2">
-                                    <mat-icon>
-                                        <img src="../../assets/images/linkedin.svg" alt="">
-                                    </mat-icon>
-                                    <a href="https://www.linkedin.com/in/aadhivenkat" target="_blank" class="px-1 fw-semibold underline hover:text-blue-600" >aadhiVenkat</a>
-                                </div>
-                                <div class="d-flex mt-2">
-                                    <mat-icon>
-                                        <img src="../../assets/images/github.svg" alt="">
-                                    </mat-icon>
-                                    <a href="https://github.com/aadhiVenkat" target="_blank" class="px-1 fw-semibold underline hover:text-blue-600">aadhiVenkat</a>
-                                </div>
-                                <div class="d-flex mt-2">
-                                    <mat-icon>
-                                        <img src="../../assets/images/resume1.png" alt="">
-                                    </mat-icon>
-                                    <a href="../../assets/images/VENKATAADINARAYANA.pdf" target="_blank" download="Venkata_Adi_Narayana_P" class="px-1 fw-semibold underline hover:text-blue-600">Resume</a>
-                                </div>
-                            </div>
+<mat-card class="mx-auto bg-dark shadow-lg p-4 mb-5 rounded text-white contact-container">
+    <div class="container-fluid">
+        <div class="row g-4">
+            <!-- Left Side - Contact Info -->
+            <div class="col-12 col-lg-6">
+                <div class="contact-info-section">
+                    <h3 class="mb-3 text-primary fw-bold">Get In Touch</h3>
+                    <p class="mb-4 text-light">Thank you for taking the time to review my portfolio. If you have any questions, inquiries, or would like to discuss potential opportunities, I would love to hear from you.</p>
+                    <div class="contact-links">
+                        <div class="contact-link-item d-flex align-items-center mb-3">
+                            <mat-icon class="me-3 text-primary">email</mat-icon>
+                            <a href="mailto:aadhivenkat4@gmail.com" class="text-white text-decoration-none fw-semibold">
+                                aadhivenkat4&#64;gmail.com
+                            </a>
+                        </div>
+                        <div class="contact-link-item d-flex align-items-center mb-3">
+                            <mat-icon class="me-3 text-primary">work</mat-icon>
+                            <a href="https://www.linkedin.com/in/aadhivenkat" target="_blank" rel="noopener noreferrer" class="text-white text-decoration-none fw-semibold">
+                                LinkedIn Profile
+                            </a>
+                        </div>
+                        <div class="contact-link-item d-flex align-items-center mb-3">
+                            <mat-icon class="me-3 text-primary">code</mat-icon>
+                            <a href="https://github.com/aadhiVenkat" target="_blank" rel="noopener noreferrer" class="text-white text-decoration-none fw-semibold">
+                                GitHub Profile
+                            </a>
+                        </div>
+                        <div class="contact-link-item d-flex align-items-center mb-3">
+                            <mat-icon class="me-3 text-primary">description</mat-icon>
+                            <a href="../../assets/images/VENKATAADINARAYANA.pdf" target="_blank" download="Venkata_Adi_Narayana_P" class="text-white text-decoration-none fw-semibold">
+                                Download Resume
+                            </a>
                         </div>
                     </div>
                 </div>
-            </mat-card-content>
-            <mat-card-content>
-                <mat-card-header class="fs-1 fw-semibold text-decoration-underline">Contact Me</mat-card-header>
-                <div class="card bg-teal-200 shadow-md rounded-lg bg-gradient-to-b">
-                    <div class="card-body  text-white fw-medium text-center">
-                        <div class="row">
-                            <!-- <mat-icon> -->
-                                <!-- <img src="../../assets/images/user.svg" alt="" class="mx-auto" style="width: 100px;"> -->
-                            <!-- </mat-icon> -->
-                        </div>
-                        <div class="row">
-                            <mat-form-field>
-                                <mat-label>Enter your email</mat-label>
-                                <input matInput placeholder="pat@example.com" [formControl]="email" required>
-                                @if (email.invalid) {
-                                <mat-error>{{getErrorMessage()}}</mat-error>
-                                }
-                            </mat-form-field>
-                        </div>
-                        <div class="row">
-                            <mat-form-field>
-                                <mat-label>Enter your Company Name</mat-label>
-                                <input matInput placeholder="Company" [formControl]="companyName" required>
-                                @if (email.invalid) {
-                                <mat-error>{{getErrorMessage()}}</mat-error>
-                                }
-                            </mat-form-field>
-                        </div>
-                        <div class="row">
-                            <mat-form-field>
-                                <mat-label>Message</mat-label>
-                                <textarea matInput [formControl]="message" style="height: 150px;"></textarea>
-                            </mat-form-field>
-                        </div>
-                        <div class="row">
-                            <input class="btn ml-auto mr-3 w-fit bg-white text-fuchsia-600 fw-semibold hover:text-black" [disabled]="disbaleSubmit"  type="submit" value="Let's Connect" 
-                            data-bs-toggle="modal" data-bs-target="#staticBackdrop" (click)="submit();">
-                        </div>
-                    </div>
-                </div>
-            </mat-card-content>
-        </div>
-    </div>
-   
-</mat-card>
+            </div>
 
-  <!-- Modal -->
-<div class="modal fade " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog ">
-        <div class="modal-content bg-black text-white-50">
-            <div class="modal-header">
-                <h1 class="modal-title fs-6 fw-bolder" id="staticBackdropLabel">Thank You!</h1>
-                <button type="button" mat-icon-button class="ml-auto" aria-label="Close" data-bs-dismiss="modal">
-                    <mat-icon>close</mat-icon>
-                </button>
-            </div>
-            <div class="modal-body text-white-50 fw-semibold">
-                I've received your details. I'll be connect with you shortly.
+            <!-- Right Side - Contact Form -->
+            <div class="col-12 col-lg-6">
+                <h2 class="fs-1 fw-bold text-decoration-underline text-primary mb-4">Contact Me</h2>
+                <form [formGroup]="contactForm" (ngSubmit)="submit()" class="contact-form">
+                    <!-- Email Field -->
+                    <mat-form-field appearance="outline" class="w-100 mb-3">
+                        <mat-label>Email Address</mat-label>
+                        <input matInput type="email" formControlName="email" required>
+                        @if (email.invalid && (email.dirty || email.touched)) {
+                            <mat-error>{{getErrorMessage(email)}}</mat-error>
+                        }
+                    </mat-form-field>
+
+                    <!-- Company Name Field -->
+                    <mat-form-field appearance="outline" class="w-100 mb-3">
+                        <mat-label>Company Name</mat-label>
+                        <input matInput formControlName="companyName" required>
+                        @if (companyName.invalid && (companyName.dirty || companyName.touched)) {
+                            <mat-error>{{getErrorMessage(companyName)}}</mat-error>
+                        }
+                    </mat-form-field>
+
+                    <!-- Message Field -->
+                    <mat-form-field appearance="outline" class="w-100 mb-3">
+                        <mat-label>Message</mat-label>
+                        <textarea matInput formControlName="message" rows="5" required></textarea>
+                        @if (message.invalid && (message.dirty || message.touched)) {
+                            <mat-error>{{getErrorMessage(message)}}</mat-error>
+                        }
+                    </mat-form-field>
+
+                    <!-- Error Message -->
+                    @if (submitError) {
+                        <div class="alert alert-danger mb-3 d-flex align-items-center">
+                            <mat-icon class="me-2">error</mat-icon>
+                            <span>{{submitError}}</span>
+                        </div>
+                    }
+
+                    <!-- Success Message -->
+                    @if (submitSuccess) {
+                        <div class="alert alert-success mb-3 d-flex align-items-center">
+                            <mat-icon class="me-2">check_circle</mat-icon>
+                            <span>Thank you! I've received your message and will get back to you shortly.</span>
+                        </div>
+                    }
+
+                    <!-- Submit Button -->
+                    <div class="d-flex justify-content-end">
+                        <button 
+                            mat-raised-button 
+                            color="primary" 
+                            type="submit" 
+                            [disabled]="!isFormValid"
+                            class="submit-btn">
+                            @if (isSubmitting) {
+                                <mat-spinner diameter="20" class="me-2"></mat-spinner>
+                                <span>Sending...</span>
+                            } @else {
+                                <mat-icon class="me-2">send</mat-icon>
+                                <span>Let's Connect</span>
+                            }
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-</div>
+</mat-card>

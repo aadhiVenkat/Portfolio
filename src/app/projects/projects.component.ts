@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { Project } from '../models/project.model';
 
 @Component({
   selector: 'app-projects',
@@ -12,7 +13,7 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './projects.component.css'
 })
 export class ProjectsComponent {
-  projects = [
+  projects: Project[] = [
     {
       id: 1,
       title: 'Portfolio Website',
@@ -26,8 +27,8 @@ export class ProjectsComponent {
     {
       id: 2,
       title: 'Todo App',
-      description: 'A fully functional and intuitive todo application built with Angular that helps users manage their daily tasks efficiently. The app provides a clean and user-friendly interface for creating, editing, and deleting tasks. It demonstrates core Angular concepts including component architecture, data binding, and state management. The application is deployed on GitHub Pages and showcases modern web development practices with a focus on user experience and simplicity.',
-      technologies: ['Angular', 'TypeScript', 'HTML', 'CSS'],
+      description: 'A fully functional and intuitive todo application built with React and JavaScript that helps users manage their daily tasks efficiently. The app provides a clean and user-friendly interface for creating, editing, and deleting tasks. It demonstrates core React concepts including component architecture, hooks, and state management. The application is deployed on GitHub Pages and showcases modern web development practices with a focus on user experience and simplicity.',
+      technologies: ['React', 'JavaScript', 'HTML', 'CSS'],
       githubUrl: 'https://github.com/aadhivenkat/ToDo-app',
       liveUrl: 'https://aadhivenkat.github.io/ToDo-app/',
       imageUrl: '../../assets/images/Logo.png',

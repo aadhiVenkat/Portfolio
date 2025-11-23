@@ -1,49 +1,64 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, HostListener, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { APP_CONSTANTS } from '../constants/app.constants';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, MatButtonModule, MatIconModule,MatToolbarModule],
+  imports: [CommonModule, MatButtonModule, MatIconModule, MatToolbarModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
-export class HeaderComponent {
-  @ViewChild("base", {static: false}) base! : ElementRef;
-  @ViewChild("about", {static: false}) about! : ElementRef;
-  @ViewChild("skills", {static: false}) skills! : ElementRef;
-  @ViewChild("proficiencies", {static: false}) proficiencies! : ElementRef;
-  @ViewChild("contact", {static: false}) contact! : ElementRef;
+export class HeaderComponent implements OnDestroy {
+  isScrolled = false;
+  activeSection = 'base';
 
-  constructor(private eleRef:ElementRef){}
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll(): void {
+    this.isScrolled = window.scrollY > 50;
+    this.updateActiveSection();
+  }
 
-  scrollToTarget(target:string) {
-  //  var headDiv = this.eleRef.nativeElement.querySelector('.toolbar').offsetHeight;
-  //  var targetDiv = this.base?.nativeElement.offsetTop - headDiv;
-  //  debugger
-  //  switch(target){
-  //   case "base":
-  //     targetDiv = this.base?.nativeElement.offsetTop - headDiv;
-  //     break;
-  //   case "about":
-  //     targetDiv = this.about?.nativeElement.offsetTop - headDiv;
-  //     break;
-  //   case "skills":
-  //     targetDiv = this.skills?.nativeElement.offsetTop - headDiv;
-  //     break;
-  //   case "proficiencies":
-  //     targetDiv = this.proficiencies?.nativeElement.offsetTop - headDiv;
-  //     break;
-  //   case "contact":
-  //     targetDiv = this.contact?.nativeElement.offsetTop - headDiv;
-  //     break;
-  //  }
-   const targetElement = document.getElementById(target);
-   targetElement?.scrollIntoView({behavior:'smooth', block:'start'})
-  //  window.scrollTo({top:targetDiv, behavior:'smooth'});
-}
- 
+  scrollToTarget(target: string): void {
+    const targetElement = document.getElementById(target);
+    if (targetElement) {
+      const headerOffset = 80;
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  }
+
+  private updateActiveSection(): void {
+    const sections = Object.values(APP_CONSTANTS.SECTIONS);
+    const scrollPosition = window.scrollY + 150;
+
+    for (const section of sections) {
+      const element = document.getElementById(section);
+      if (element) {
+        const offsetTop = element.offsetTop;
+        const offsetHeight = element.offsetHeight;
+
+        if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+          this.activeSection = section;
+          break;
+        }
+      }
+    }
+  }
+
+  isActive(section: string): boolean {
+    return this.activeSection === section;
+  }
+
+  ngOnDestroy(): void {
+    // Cleanup if needed
+  }
 }

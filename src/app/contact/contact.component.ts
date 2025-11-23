@@ -1,92 +1,135 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { merge } from 'rxjs';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { FormControl, ReactiveFormsModule, Validators, FormGroup } from '@angular/forms';
+import { merge, Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+import { ContactFormData } from '../models/contact.model';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, MatCardModule , MatButtonModule, MatIconModule, MatFormFieldModule, MatInputModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    MatCardModule,
+    MatButtonModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatProgressSpinnerModule,
+    ReactiveFormsModule
+  ],
   templateUrl: './contact.component.html',
-  styleUrl: './contact.component.css'
+  styleUrl: './contact.component.css',
+  encapsulation: ViewEncapsulation.None
 })
-export class ContactComponent implements OnInit {
+export class ContactComponent implements OnInit, OnDestroy {
+  private readonly destroy$ = new Subject<void>();
   
-  email = new FormControl('', [Validators.required, Validators.email]);
-  companyName = new FormControl('', [Validators.required]);
-  message = new FormControl('', [Validators.required]);
-  disbaleSubmit:boolean = true;
+  contactForm = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email]),
+    companyName: new FormControl('', [Validators.required]),
+    message: new FormControl('', [Validators.required, Validators.minLength(10)])
+  });
 
-  ngOnInit() {
+  isSubmitting = false;
+  submitError: string | null = null;
+  submitSuccess = false;
+
+  get email(): FormControl {
+    return this.contactForm.get('email') as FormControl;
+  }
+
+  get companyName(): FormControl {
+    return this.contactForm.get('companyName') as FormControl;
+  }
+
+  get message(): FormControl {
+    return this.contactForm.get('message') as FormControl;
+  }
+
+  get isFormValid(): boolean {
+    return this.contactForm.valid && !this.isSubmitting;
+  }
+
+  ngOnInit(): void {
     merge(
       this.email.valueChanges,
       this.companyName.valueChanges,
-      this.message.valueChanges,
-      ).subscribe(()=>{
-        this.disbaleSubmit = !(this.email.valid && this.companyName.valid && this.message.valid);
-    })
-  }
-  getErrorMessage() {
-    if (this.email.hasError('required')) {
-      return 'You must enter a value';
-    }
-
-    return this.email.hasError('email') ? 'Not a valid email' : '';
-  }
-
-  submit(){
-    const formData = new FormData();
-    const email_value:string = this.email.value ? this.email.value : "";
-    const companyName_value:string = this.companyName.value ? this.companyName.value : "";
-    const message_value:string = this.message.value ? this.message.value : "";
-    formData.append("email",email_value);
-    formData.append("companyName",companyName_value);
-    formData.append("message",message_value);
-    // fetch("https://getform.io/f/zaxmdegb", {
-    //     method: "POST",
-    //     body: formData,
-    //     headers: {
-    //         "Accept": "application/json",
-    //     },
-    // })
-    // .then(response => {
-    //     if (!response.ok) {
-    //         throw new Error(`An error occurred: ${response.statusText}`);
-    //     }else{
-    //       this.email.reset();
-    //       this.companyName.reset();
-    //       this.message.reset();
-    //     }
-    //     console.log(response);
-    // })
-    // .catch(error => {
-    //     console.log(error);
-    // });
-
-    const url = "https://script.google.com/macros/s/AKfycbyhbSqnm-e-tsM2gtVQd3cp29SUosjFFODzbbAazKRhRmz_xCzWIgmxKbnPvW9Z7BxaOQ/exec"
-    fetch(url, {
-        method: "POST",
-        body: formData,
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`An error occurred: ${response.statusText}`);
-        }else{
-          this.email.reset();
-          this.companyName.reset();
-          this.message.reset();
-        }
-        console.log(response);
-    })
-    .catch(error => {
-        console.log(error);
+      this.message.valueChanges
+    ).pipe(takeUntil(this.destroy$)).subscribe(() => {
+      this.submitError = null;
     });
   }
 
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
+  }
 
+  getErrorMessage(control: FormControl): string {
+    if (control.hasError('required')) {
+      return 'This field is required';
+    }
+    if (control.hasError('email')) {
+      return 'Please enter a valid email address';
+    }
+    if (control.hasError('minlength')) {
+      return `Minimum length is ${control.errors?.['minlength'].requiredLength} characters`;
+    }
+    return '';
+  }
+
+  async submit(): Promise<void> {
+    if (!this.contactForm.valid || this.isSubmitting) {
+      return;
+    }
+
+    this.isSubmitting = true;
+    this.submitError = null;
+    this.submitSuccess = false;
+
+    try {
+      const formData: ContactFormData = {
+        email: this.email.value || '',
+        companyName: this.companyName.value || '',
+        message: this.message.value || ''
+      };
+
+      const url = 'https://script.google.com/macros/s/AKfycbyhbSqnm-e-tsM2gtVQd3cp29SUosjFFODzbbAazKRhRmz_xCzWIgmxKbnPvW9Z7BxaOQ/exec';
+      
+      const formDataToSend = new FormData();
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('companyName', formData.companyName);
+      formDataToSend.append('message', formData.message);
+      
+      const response = await fetch(url, {
+        method: 'POST',
+        body: formDataToSend
+      });
+
+      if (!response.ok) {
+        throw new Error(`Submission failed: ${response.statusText}`);
+      }
+
+      this.contactForm.reset();
+      this.submitSuccess = true;
+      
+      // Auto-hide success message after 5 seconds
+      setTimeout(() => {
+        this.submitSuccess = false;
+      }, 5000);
+
+    } catch (error) {
+      this.submitError = error instanceof Error ? error.message : 'An unexpected error occurred. Please try again.';
+      console.error('Contact form submission error:', error);
+    } finally {
+      this.isSubmitting = false;
+    }
+  }
 }

@@ -1,93 +1,116 @@
 <app-header></app-header>
-<div class="container">
+<div class="main-container">
     @defer (on viewport) {
-    <div style="margin-top: 9%;" id="base" class="mx-auto component_width">
-        <app-base></app-base>
-    </div>
+        <section id="base" class="section-container section-hero">
+            <app-base></app-base>
+        </section>
     }
-    @loading (after 150ms; minimum 150ms){
-    <div style="margin-top: 9%;" class="mx-auto component_width">Loading...</div>
+    @loading (after 150ms; minimum 150ms) {
+        <div class="section-container section-hero loading-placeholder">
+            <div class="spinner"></div>
+        </div>
     }
-    @placeholder (minimum 150ms){
-    <div style="margin-top: 9%;" class="mx-auto component_width"></div>
+    @placeholder (minimum 150ms) {
+        <div class="section-container section-hero"></div>
     }
     @error {
-    <div style="margin-top: 9%;" class="mx-auto component_width">Unable to load component</div>
+        <div class="section-container section-hero error-placeholder">
+            <p>Unable to load component</p>
+        </div>
     }
 
     @defer (on viewport) {
-    <div style="margin-top: 5%;" class="mx-auto component_width">
-        <app-about id="about"></app-about>
-    </div>
+        <section id="about" class="section-container">
+            <app-about></app-about>
+        </section>
     }
-    @loading (after 200ms; minimum 200ms){
-    <div style="margin-top: 5%;" class="mx-auto component_width">Loading...</div>
+    @loading (after 200ms; minimum 200ms) {
+        <div class="section-container loading-placeholder">
+            <div class="spinner"></div>
+        </div>
     }
-    @placeholder (minimum 200ms){
-    <div style="margin-top: 5%;" class="mx-auto component_width">About</div>
-    }
-    @error {
-    <div style="margin-top: 5%;" class="mx-auto component_width">Unable to load component</div>
-    }
-
-
-    @defer (on viewport) {
-    <div style="margin-top: 5%;" class="mx-auto component_width">
-        <app-skills id="skills"></app-skills>
-    </div>
-    }
-    @loading (after 250ms; minimum 250ms){
-    <div style="margin-top: 5%;" class="mx-auto component_width">Loading...</div>
-    }
-    @placeholder (minimum 250ms){
-    <div style="margin-top: 5%;" class="mx-auto component_width">Skills</div>
+    @placeholder (minimum 200ms) {
+        <div class="section-container"></div>
     }
     @error {
-    <div style="margin-top: 5%;" class="mx-auto component_width">Unable to load component</div>
+        <div class="section-container error-placeholder">
+            <p>Unable to load component</p>
+        </div>
     }
 
     @defer (on viewport) {
-    <div style="margin-top: 5%;" class="mx-auto component_width">
-        <app-proficiencies id="proficiencies"></app-proficiencies>
-    </div>
+        <section id="skills" class="section-container">
+            <app-skills></app-skills>
+        </section>
     }
-    @loading (after 350ms; minimum 350ms){
-    <div style="margin-top: 5%;" class="mx-auto component_width">Loading...</div>
+    @loading (after 250ms; minimum 250ms) {
+        <div class="section-container loading-placeholder">
+            <div class="spinner"></div>
+        </div>
     }
-    @placeholder (minimum 350ms){
-    <div style="margin-top: 5%;" class="mx-auto component_width">Proficiencies</div>
+    @placeholder (minimum 250ms) {
+        <div class="section-container"></div>
     }
     @error {
-    <div style="margin-top: 5%;" class="mx-auto component_width">Unable to load component</div>
+        <div class="section-container error-placeholder">
+            <p>Unable to load component</p>
+        </div>
     }
 
     @defer (on viewport) {
-    <div style="margin-top: 5%;" class="mx-auto component_width">
-        <app-projects id="projects"></app-projects>
-    </div>
+        <section id="proficiencies" class="section-container">
+            <app-proficiencies></app-proficiencies>
+        </section>
     }
-    @loading (after 400ms; minimum 400ms){
-    <div style="margin-top: 5%;" class="mx-auto component_width">Loading...</div>
+    @loading (after 350ms; minimum 350ms) {
+        <div class="section-container loading-placeholder">
+            <div class="spinner"></div>
+        </div>
     }
-    @placeholder (minimum 400ms){
-    <div style="margin-top: 5%;" class="mx-auto component_width">Projects</div>
+    @placeholder (minimum 350ms) {
+        <div class="section-container"></div>
     }
     @error {
-    <div style="margin-top: 5%;" class="mx-auto component_width">Unable to load component</div>
+        <div class="section-container error-placeholder">
+            <p>Unable to load component</p>
+        </div>
     }
 
     @defer (on viewport) {
-    <div style="margin-top: 5%;" class="mx-auto component_width">
-        <app-contact id="contact"></app-contact>
-    </div>
+        <section id="projects" class="section-container">
+            <app-projects></app-projects>
+        </section>
     }
-    @loading (after 1000ms; minimum 1000ms){
-    <div style="margin-top: 5%;" class="mx-auto component_width">Loading...</div>
+    @loading (after 400ms; minimum 400ms) {
+        <div class="section-container loading-placeholder">
+            <div class="spinner"></div>
+        </div>
     }
-    @placeholder (minimum 1000ms){
-    <div style="margin-top: 5%;" class="mx-auto component_width">Contact</div>
+    @placeholder (minimum 400ms) {
+        <div class="section-container"></div>
     }
     @error {
-    <div style="margin-top: 5%;" class="mx-auto component_width">Unable to load component</div>
+        <div class="section-container error-placeholder">
+            <p>Unable to load component</p>
+        </div>
+    }
+
+    @defer (on viewport) {
+        <section id="contact" class="section-container">
+            <app-contact></app-contact>
+        </section>
+    }
+    @loading (after 1000ms; minimum 1000ms) {
+        <div class="section-container loading-placeholder">
+            <div class="spinner"></div>
+        </div>
+    }
+    @placeholder (minimum 1000ms) {
+        <div class="section-container"></div>
+    }
+    @error {
+        <div class="section-container error-placeholder">
+            <p>Unable to load component</p>
+        </div>
     }
 </div>

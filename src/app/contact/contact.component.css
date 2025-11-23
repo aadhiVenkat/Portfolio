@@ -1,29 +1,149 @@
-mat-card,p{
-    animation: topSlide 2s ease alternate;
-    animation-delay: .2s;
+/* Contact Component Styles - All styles scoped to contact-container */
+.contact-container {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
+    border: 1px solid rgba(0, 123, 255, 0.2) !important;
 }
 
-img,input{
-    animation: leftSlide 2s ease alternate;
-    animation-delay: .4s;
+.contact-container .contact-info-section {
+    padding: 1rem 0;
 }
 
-h1{
-    animation: rightSlide 2s ease alternate;
-    animation-delay: .3s;
-    font-size: 35px;
-    color: lightsteelblue;
+.contact-container .contact-link-item {
+    transition: all 0.3s ease;
+    padding: 0.5rem;
+    border-radius: 8px;
 }
 
-mat-card-content,mat-form-field{
-    animation: bottomSlide 5s ease alternate;
-    animation-delay: .3s;
+.contact-container .contact-link-item:hover {
+    background-color: rgba(0, 123, 255, 0.1);
+    transform: translateX(5px);
 }
 
-.cursor{
-    cursor: not-allowed !important;
+.contact-container .contact-link-item a:hover {
+    color: #00d4ff !important;
+    text-decoration: underline !important;
 }
 
-.mdc-button__label{
-    color: fuchsia !important;
+.contact-container .contact-form {
+    width: 100%;
+}
+
+/* Material Angular v17 Outline Form Field Styling */
+.contact-container .contact-form .mat-mdc-form-field {
+    width: 100%;
+}
+
+/* Remove all internal borders and lines */
+.contact-container .contact-form .mat-mdc-text-field-wrapper {
+    background-color: transparent !important;
+    border: none !important;
+}
+
+.contact-container .contact-form .mat-mdc-text-field-input-container {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}
+
+.contact-container .contact-form .mdc-text-field__input {
+    background: transparent !important;
+}
+
+
+
+/* Input Text Color */
+.contact-container .contact-form .mdc-text-field__input {
+    color: #ffffff !important;
+    caret-color: #007bff !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+/* Label Color */
+.contact-container .contact-form .mdc-floating-label {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.contact-container .contact-form .mdc-floating-label--float-above {
+    color: #007bff !important;
+}
+
+
+
+.contact-container .contact-form .mat-mdc-form-field .mdc-notched-outline__notch{
+    border-left: none !important;
+    border-right: none !important;
+}
+
+.contact-container .contact-form .mat-mdc-form-field-error {
+    color: #ff6b6b !important;
+}
+
+/* Submit Button */
+.contact-container .submit-btn {
+    min-width: 150px;
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    color: #ffffff !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.contact-container .submit-btn mat-icon,
+.contact-container .submit-btn span {
+    color: #ffffff !important;
+}
+
+.contact-container .submit-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 123, 255, 0.4);
+}
+
+.contact-container .submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.contact-container .submit-btn mat-spinner {
+    display: inline-block;
+}
+
+/* Alerts */
+.contact-container .alert {
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem;
+}
+
+.contact-container .alert-danger {
+    background-color: rgba(220, 53, 69, 0.2);
+    border: 1px solid rgba(220, 53, 69, 0.5);
+    color: #ff6b6b;
+}
+
+.contact-container .alert-success {
+    background-color: rgba(40, 167, 69, 0.2);
+    border: 1px solid rgba(40, 167, 69, 0.5);
+    color: #51cf66;
+}
+
+.contact-container .alert mat-icon {
+    flex-shrink: 0;
+}
+
+.contact-container .alert span {
+    flex: 1;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .contact-container .contact-info-section {
+        margin-bottom: 2rem;
+    }
 }

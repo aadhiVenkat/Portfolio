@@ -1,12 +1,42 @@
-<mat-toolbar class="fixed-top fw-normal headerColor toolbar">
+<mat-toolbar [class.scrolled]="isScrolled" class="fixed-top fw-normal headerColor toolbar">
     <span class="fw-bold hover:text-black">Portfolio</span>
     <div class="container-fluid justify-content-end" id="bigScreen">
-        <button mat-button class="float-end" (click)="scrollToTarget('contact');">Contact</button>
-        <button mat-button class="float-end me-2" (click)="scrollToTarget('projects');">Projects</button>
-        <button mat-button class="float-end me-2" (click)="scrollToTarget('proficiencies');">Proficiencies</button>
-        <button mat-button class="float-end me-2" (click)="scrollToTarget('skills');">Skills</button>
-        <button mat-button class="float-end me-2" (click)="scrollToTarget('about');">About</button>
-        <button mat-button class="float-end me-2" (click)="scrollToTarget('base');">Home</button>
+        <button mat-button 
+                class="float-end nav-button" 
+                [class.active]="isActive('contact')"
+                (click)="scrollToTarget('contact');">
+            Contact
+        </button>
+        <button mat-button 
+                class="float-end me-2 nav-button" 
+                [class.active]="isActive('projects')"
+                (click)="scrollToTarget('projects');">
+            Projects
+        </button>
+        <button mat-button 
+                class="float-end me-2 nav-button" 
+                [class.active]="isActive('proficiencies')"
+                (click)="scrollToTarget('proficiencies');">
+            Proficiencies
+        </button>
+        <button mat-button 
+                class="float-end me-2 nav-button" 
+                [class.active]="isActive('skills')"
+                (click)="scrollToTarget('skills');">
+            Skills
+        </button>
+        <button mat-button 
+                class="float-end me-2 nav-button" 
+                [class.active]="isActive('about')"
+                (click)="scrollToTarget('about');">
+            About
+        </button>
+        <button mat-button 
+                class="float-end me-2 nav-button" 
+                [class.active]="isActive('base')"
+                (click)="scrollToTarget('base');">
+            Home
+        </button>
     </div>
 
     <div id="mobileScreen" class="ms-auto">
