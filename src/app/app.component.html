@@ -63,6 +63,21 @@
 
     @defer (on viewport) {
     <div style="margin-top: 5%;" class="mx-auto component_width">
+        <app-projects id="projects"></app-projects>
+    </div>
+    }
+    @loading (after 400ms; minimum 400ms){
+    <div style="margin-top: 5%;" class="mx-auto component_width">Loading...</div>
+    }
+    @placeholder (minimum 400ms){
+    <div style="margin-top: 5%;" class="mx-auto component_width">Projects</div>
+    }
+    @error {
+    <div style="margin-top: 5%;" class="mx-auto component_width">Unable to load component</div>
+    }
+
+    @defer (on viewport) {
+    <div style="margin-top: 5%;" class="mx-auto component_width">
         <app-contact id="contact"></app-contact>
     </div>
     }

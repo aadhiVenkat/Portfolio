@@ -2,6 +2,7 @@
     <span class="fw-bold hover:text-black">Portfolio</span>
     <div class="container-fluid justify-content-end" id="bigScreen">
         <button mat-button class="float-end" (click)="scrollToTarget('contact');">Contact</button>
+        <button mat-button class="float-end me-2" (click)="scrollToTarget('projects');">Projects</button>
         <button mat-button class="float-end me-2" (click)="scrollToTarget('proficiencies');">Proficiencies</button>
         <button mat-button class="float-end me-2" (click)="scrollToTarget('skills');">Skills</button>
         <button mat-button class="float-end me-2" (click)="scrollToTarget('about');">About</button>
@@ -31,6 +32,8 @@
                         (click)="scrollToTarget('skills');">Skills</button>
                     <button mat-button data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive"
                         (click)="scrollToTarget('proficiencies');">Proficiencies</button>
+                    <button mat-button data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive"
+                        (click)="scrollToTarget('projects');">Projects</button>
                     <button mat-button data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive"
                         (click)="scrollToTarget('contact');">Contact</button>
                 </div>
