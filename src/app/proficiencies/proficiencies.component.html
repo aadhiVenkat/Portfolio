@@ -1,88 +1,175 @@
-<mat-card class="skill">
-    <!-- <mat-card-header class="fs-1 fw-semibold text-decoration-underline">Proficiencies</mat-card-header> -->
-    <mat-card-content class="col-md-8 my-auto w-100">
-        <div class="container text-center">
-            <mat-tab-group>
-                <mat-tab>
-                    <ng-template mat-tab-label>
-                        <mat-icon class="example-tab-icon text-sm">work</mat-icon>
-                        Proficiency
-                    </ng-template>
-                    <mat-card-content>
-                        <div class="row gap-4 row-cols-lg-2 mt-3 exp">
-                            <div class="card proficiency-card mb-2 mx-auto">
-                                <div class="card-header">Senior Software Specialist</div>
-                                <div class="card-body">
-                                    <h5 class="card-title">S&P Global</h5>
-                                    <p class="card-text">Full-Stack Developer</p>
-                                    <sub>(06/2024-To-Current)</sub>
-                                </div>
-                            </div>
-                        </div>
-                    </mat-card-content>
-                    <mat-card-content>
-                        <div class="row gap-4 row-cols-lg-2 mt-3 exp">
-                            <div class="card proficiency-card mb-2 mx-auto">
-                                <div class="card-header">Software Engineer</div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Virtusa Consulting Services Private Limited</h5>
-                                    <p class="card-text">Full-Stack Developer</p>
-                                    <sub>(2021-To-05/2024)</sub>
-                                </div>
-                            </div>
-                        </div>
-                    </mat-card-content>
-                </mat-tab>
-                <mat-tab>
-                    <ng-template mat-tab-label>
-                        <mat-icon class="example-tab-icon text-sm">school</mat-icon>
-                        Qualification
-                    </ng-template>
-                    <mat-card-content>
-                        <div class="row gap-4 row-cols-lg-3 mt-3 justify-content-center">
-                            <div class="card proficiency-card mb-2">
-                                <div class="card-header">Post Graduate</div>
-                                <div class="card-body">
-                                    <h5 class="card-title">MCA</h5>
-                                    <p class="card-text">Jawaharlal Nehru Technological University, Anantapur </p>
-                                    <sub>(2017-2020)</sub> <br>
-                                    <sub class="card-text">Siddhartha Institute of Engineering and Technology</sub>
-                                </div>
-                            </div>
-                            <div class="card proficiency-card mb-2">
-                                <div class="card-header">Graduate</div>
-                                <div class="card-body">
-                                    <h5 class="card-title">BSC</h5>
-                                    <p class="card-text">Yogi Vemana University, Kadapa </p>
-                                    <sub>(2014-2017)</sub> <br>
-                                    <sub class="card-text">Loyola Degree College</sub>
-                                </div>
-                            </div>
-                            <div class="card proficiency-card mb-2">
-                                <div class="card-header">Mid Level</div>
-                                <div class="card-body">
-                                    <h5 class="card-title">CSE</h5>
-                                    <p class="card-text">Board of Intermediate Education A.P </p>
-                                    <sub>(2012-2014)</sub> <br>
-                                    <sub class="card-text">Govt. Junior College</sub>
-                                </div>
-                            </div>
-                            <div class="card proficiency-card mb-2">
-                                <div class="card-header">Higher Secondary</div>
-                                <div class="card-body">
-                                    <h5 class="card-title">SSC</h5>
-                                    <p class="card-text">Board of Secondary Education A.P </p>
-                                    <sub>(2012)</sub>
-                                </div>
-                            </div>
-                        </div>
-                    </mat-card-content>
-                </mat-tab>
-            </mat-tab-group>
+<mat-card class="proficiencies-container">
+    <div class="section-header mb-5">
+        <div class="d-flex align-items-center justify-content-center mb-2">
+            <mat-icon class="header-icon me-3">workspace_premium</mat-icon>
+            <h1 class="section-title mb-0">Professional Journey</h1>
         </div>
-    </mat-card-content>
+        <p class="section-subtitle text-center">Experience & Education Timeline</p>
+    </div>
+
+    <mat-tab-group class="custom-tabs" animationDuration="300ms">
+        <!-- Experience Tab -->
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <div class="tab-label">
+                    <mat-icon class="tab-icon">work_outline</mat-icon>
+                    <span>Work Experience</span>
+                </div>
+            </ng-template>
+            
+            <div class="timeline-container">
+                <!-- Current Position -->
+                <div class="timeline-item">
+                    <div class="timeline-badge current">
+                        <mat-icon>trending_up</mat-icon>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="experience-card">
+                            <div class="card-header-custom">
+                                <div class="d-flex justify-content-between align-items-start flex-wrap">
+                                    <div>
+                                        <h3 class="position-title">Senior Software Specialist</h3>
+                                        <h4 class="company-name">S&P Global</h4>
+                                    </div>
+                                    <span class="badge current-badge">Current</span>
+                                </div>
+                            </div>
+                            <div class="card-body-custom">
+                                <div class="duration">
+                                    <mat-icon class="duration-icon">schedule</mat-icon>
+                                    <span>June 2024 - Present</span>
+                                </div>
+                                <div class="achievements mt-3">
+                                    <h5 class="achievements-title">Key Responsibilities:</h5>
+                                    <ul class="achievements-list">
+                                        <li>Leading full-stack development initiatives</li>
+                                        <li>Architecting scalable enterprise solutions</li>
+                                        <li>Mentoring junior developers</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Previous Position -->
+                <div class="timeline-item">
+                    <div class="timeline-badge">
+                        <mat-icon>code</mat-icon>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="experience-card">
+                            <div class="card-header-custom">
+                                <div>
+                                    <h3 class="position-title">Software Engineer</h3>
+                                    <h4 class="company-name">Virtusa Consulting Services</h4>
+                                </div>
+                            </div>
+                            <div class="card-body-custom">
+                                <div class="duration">
+                                    <mat-icon class="duration-icon">schedule</mat-icon>
+                                    <span>2021 - May 2024</span>
+                                </div>
+                                <div class="achievements mt-3">
+                                    <h5 class="achievements-title">Key Contributions:</h5>
+                                    <ul class="achievements-list">
+                                        <li>Developed and maintained enterprise applications</li>
+                                        <li>Collaborated with cross-functional teams</li>
+                                        <li>Implemented best practices and coding standards</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mat-tab>
+
+        <!-- Education Tab -->
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <div class="tab-label">
+                    <mat-icon class="tab-icon">school</mat-icon>
+                    <span>Education</span>
+                </div>
+            </ng-template>
+            
+            <div class="education-grid">
+                <!-- Post Graduate -->
+                <div class="education-card">
+                    <div class="education-icon-wrapper">
+                        <mat-icon class="education-icon">school</mat-icon>
+                    </div>
+                    <div class="education-header">
+                        <span class="education-level">Post Graduate</span>
+                        <h3 class="degree-title">Master of Computer Applications</h3>
+                    </div>
+                    <div class="education-body">
+                        <p class="university-name">Jawaharlal Nehru Technological University, Anantapur</p>
+                        <p class="college-name">Siddhartha Institute of Engineering and Technology</p>
+                        <div class="education-year">
+                            <mat-icon>calendar_today</mat-icon>
+                            <span>2017 - 2020</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Graduate -->
+                <div class="education-card">
+                    <div class="education-icon-wrapper">
+                        <mat-icon class="education-icon">menu_book</mat-icon>
+                    </div>
+                    <div class="education-header">
+                        <span class="education-level">Graduate</span>
+                        <h3 class="degree-title">Bachelor of Science</h3>
+                    </div>
+                    <div class="education-body">
+                        <p class="university-name">Yogi Vemana University, Kadapa</p>
+                        <p class="college-name">Loyola Degree College</p>
+                        <div class="education-year">
+                            <mat-icon>calendar_today</mat-icon>
+                            <span>2014 - 2017</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Intermediate -->
+                <div class="education-card">
+                    <div class="education-icon-wrapper">
+                        <mat-icon class="education-icon">local_library</mat-icon>
+                    </div>
+                    <div class="education-header">
+                        <span class="education-level">Intermediate</span>
+                        <h3 class="degree-title">Computer Science Engineering</h3>
+                    </div>
+                    <div class="education-body">
+                        <p class="university-name">Board of Intermediate Education A.P</p>
+                        <p class="college-name">Govt. Junior College</p>
+                        <div class="education-year">
+                            <mat-icon>calendar_today</mat-icon>
+                            <span>2012 - 2014</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Secondary -->
+                <div class="education-card">
+                    <div class="education-icon-wrapper">
+                        <mat-icon class="education-icon">import_contacts</mat-icon>
+                    </div>
+                    <div class="education-header">
+                        <span class="education-level">Higher Secondary</span>
+                        <h3 class="degree-title">Secondary School Certificate</h3>
+                    </div>
+                    <div class="education-body">
+                        <p class="university-name">Board of Secondary Education A.P</p>
+                        <div class="education-year">
+                            <mat-icon>calendar_today</mat-icon>
+                            <span>2012</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
 </mat-card>
-
-
-<!-- <mat-icon class="text-sm" aria-hidden="false" aria-label="Example star icon"
-fontIcon="today"></mat-icon> -->

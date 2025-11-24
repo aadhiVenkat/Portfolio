@@ -183,22 +183,17 @@
 [data-theme="light"] .social-icon {
     background: #e0f2fe;
     border: 2px solid #0891b2;
+    color: #1e293b;
 }
 
-.social-icon img {
+[data-theme="dark"] .social-icon {
+    color: #00d4ff;
+}
+
+.social-icon .social-icon-svg {
     width: 24px;
     height: 24px;
-    object-fit: contain;
     display: block;
-}
-
-[data-theme="dark"] .social-icon img {
-    filter: brightness(0) invert(1);
-}
-
-[data-theme="light"] .social-icon img {
-    filter: invert(44%) sepia(78%) saturate(1547%) hue-rotate(157deg) brightness(94%) contrast(101%);
-    opacity: 1;
 }
 
 .social-icon:hover {
@@ -206,20 +201,14 @@
     background: var(--gradient-primary);
     border-color: transparent;
     box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    color: #ffffff;
 }
 
 [data-theme="light"] .social-icon:hover {
     background: #0891b2;
     border-color: #0891b2;
     box-shadow: 0 8px 20px rgba(8, 145, 178, 0.4);
-}
-
-[data-theme="dark"] .social-icon:hover img {
-    filter: brightness(0) invert(1);
-}
-
-[data-theme="light"] .social-icon:hover img {
-    filter: brightness(0) invert(1);
+    color: #ffffff;
 }
 
 /* Animations */
